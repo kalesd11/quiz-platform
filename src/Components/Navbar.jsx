@@ -6,17 +6,33 @@ import { useDispatch } from "react-redux";
 
 function Navbar() {
   // const classes = useStyles()
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
-    <AppBar position="relative" color="inherit" elevation={3}>
-      <Box mt={1} display="flex" justifyContent="space-between" alignItems='center'>
-          <Box mx={3}  pb={0.5}>
-         <Typography variant="h3" fontSize={32} fontStyle='italic' fontFamily='serif' color="darkgreen">
-          <b>Quizzy</b>
-        </Typography>
-          </Box>
-        <Box display="flex " justifyContent="end" alignItems='center' marginY={1}>
-          <Box marginX={2}>
+    <AppBar position="relative" color="inherit" elevation={3} style={{width:"100%"}}>
+      <Box
+        mt={1}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Box mx={3} pb={0.5}>
+          <Typography
+            variant="h3"
+            fontSize={32}
+            fontStyle="italic"
+            fontFamily="serif"
+            color="darkgreen"
+          >
+            <b>Quizzy</b>
+          </Typography>
+        </Box>
+        <Box
+          display="flex "
+          justifyContent="end"
+          alignItems="center"
+          marginY={1}
+        >
+          <Box>
             <Button LinkComponent={Link} to="/" variant="text" color="inherit">
               Home
             </Button>
@@ -26,7 +42,7 @@ function Navbar() {
               LinkComponent={Link}
               className="NavLink"
               to="/new_quiz"
-              onClick={()=>{
+              onClick={() => {
                 dispatch(actions.quizSubmitted());
               }}
               variant="outlined"
@@ -35,7 +51,7 @@ function Navbar() {
               New Quiz
             </Button>
           </Box>
-          <Box marginRight={4}>
+          <Box marginRight={0.5}>
             <Button
               LinkComponent={Link}
               className="NavLink"
