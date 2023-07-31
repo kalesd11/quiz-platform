@@ -1,6 +1,6 @@
 {
   "name": "quiz-app",
-  "home": "https://kalesd11.github.io/Capstone-Quiz-Platform",
+  "home": "https://kalesd11.github.io/quiz-platform",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
