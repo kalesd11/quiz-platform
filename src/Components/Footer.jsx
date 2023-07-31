@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { Box, Button } from "@mui/material";
 import { Facebook, Instagram, WhatsApp, YouTube } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -17,16 +18,16 @@ function Footer() {
         flexDirection="row"
         justifyContent="center"
       >
-        <Button color="error">
+        <Button color="error" LinkComponent={Link} target="_blank" to="https://instagram.com/kalesd?igshid=MzNlNGNkZWQ4Mg==">
           <Instagram />
         </Button>
-        <Button color="primary">
+        <Button color="primary" LinkComponent={Link} target="_blank">
           <Facebook />
         </Button>
-        <Button color="success">
+        <Button color="success" LinkComponent={Link} target="_blank" to="https://chat.whatsapp.com/L4MzY1CI5RaB7UequcgOtu">
           <WhatsApp />
         </Button>
-        <Button color="error">
+        <Button color="error" LinkComponent={Link} to="https://youtube.com/@kalesd11" target="_blank">
           <YouTube />
         </Button>
       </Box>
