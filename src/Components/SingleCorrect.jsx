@@ -1,8 +1,7 @@
 import { Paper, TextField, Box, Button, Typography } from "@mui/material";
-// import React, { useCallback } from "react";
 import { useSelector } from "react-redux";
 import SingleCorrectOptions from "./SingleCorrectOptions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../State/Actions";
 import { Alert } from "@mui/material";
@@ -11,20 +10,17 @@ function SingleCorrect(props) {
   const singleCorrectOptions = useSelector(
     (state) => state.singleCorrectOptions
   );
-  // console.log(quetions);
-  // console.log(singleCorrectOptions)
   const [option, setoption] = useState("");
   const [quetion, setquetion] = useState("");
   const [disabled, setdisabled] = useState(false);
   const dispatch = useDispatch();
 const singleCorrectOption = useSelector(state=>state.singleCorrectOptions)
-// console.log(singleCorrectOption)
 const count =singleCorrectOption.length >0 ?singleCorrectOption.filter(item=>{
     return item.id===props.id
 }):0
+
   const optionsState = () => {
     return singleCorrectOptions.map((item) => {
-      // console.log(singleCorrectOptions)
       if (item.id === props.id) {
         let opt = item.option;
         return opt.map((data) => {

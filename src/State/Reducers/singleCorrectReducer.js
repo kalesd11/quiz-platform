@@ -6,7 +6,9 @@ const singleCorrectReducer = (state=INIT_STATE,action)=>{
             return newState
             
         }
-      
+        else if(action.type==="reset"){
+            return []
+        }
         else{
             // console.log(state)
             return state

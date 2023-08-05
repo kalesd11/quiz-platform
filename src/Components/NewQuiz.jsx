@@ -8,7 +8,7 @@ import {
   Radio,
 } from "@mui/material";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "react-bootstrap";
-import React, {useMemo } from "react";
+import React, {useEffect, useMemo } from "react";
 import { useState } from "react";
 import { AddBox } from "@mui/icons-material";
 import SingleCorrect from "./SingleCorrect";
@@ -17,20 +17,17 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../State/Actions";
 function NewQuiz() {
-  // const [newQuiz, setnewQuiz] = useState(localStorage.getItem('newQuiz')?JSON.parse(localStorage.getItem('newQuiz')):[])
   const [show1, setshow1] = useState(true);
   const [show2, setshow2] = useState(false);
   const [quizType, setquizType] = useState("");
   const [quizName, setquizName] = useState("");
   const [quizId, setquizId] = useState("");
   const [description, setdescription] = useState("");
-  const singleCorrect = useSelector((state) => state.singleCorrect);
+  let singleCorrect = useSelector((state) => state.singleCorrect);
   const singleCorrectOptions = useSelector(
     (state) => state.singleCorrectOptions
   );
   const quizReducer = useSelector((state) => state.quizReducer);
-  // console.log(quizReducer)
-  // const quiz = JSON.parse(localStorage.getItem("quiz"))
   const dispatch = useDispatch();
   const handleQuetion = () => {
     return singleCorrect.map((item, index) => {
@@ -39,7 +36,6 @@ function NewQuiz() {
           key={Math.random()}
           id={item.id}
           quetion={item.quetion}
-          // handleQuetion ={handleQuetion}
           index={index}
           quizName={item.quizName}
           description={item.description}
@@ -48,17 +44,9 @@ function NewQuiz() {
     });
   };
   const singleCorrectMcq = useMemo(handleQuetion, [singleCorrect]);
-  // console.log(quizId)
-  // useEffect(()=>{
-  //  if(quizReducer.length===0){
-  //   dispatch(
-  //     actions.localQuiz(
-  //       quiz
-  //     )
-  //   );
-  //  }
-  // },[])
-  // console.log(quizReducer)
+useEffect(()=>{
+  dispatch(actions.reset())
+},[])
   return (
     <Container>
       <Box display="flex">
@@ -213,14 +201,7 @@ function NewQuiz() {
         </Box>
         <hr />
         <Box margin={3} display="flex" justifyContent="end">
-          {/* <Button
-          variant="contained"
-          type="reset"
-          
-          sx={{px:2}}
-        >
-          Reset
-        </Button> */}
+       
           <Button
             variant="contained"
             type="submit"

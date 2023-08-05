@@ -240,6 +240,16 @@ const editQuizIsCheckedOption = (value)=>{
     })  
 
 }
+const reset = (value)=>{
+    return (dispatch =>{
+        dispatch({
+            type : 'reset',
+            payload : value
+        })
+        // console.log(value)
+    })  
+
+}
 const setInactive = (value)=>{
     return (dispatch =>{
         dispatch({
@@ -253,5 +263,5 @@ const setInactive = (value)=>{
 
 
 
-export {showNavButton,singleCorrectMcq, singleCorrectOptions,isChecked,deleteOption,addQuiz,deleteQuiz,playQuiz,deleteQuetion,addQuetion,playQuizId,submitAnswer,submitQuiz,quizSubmitted,addNewQuetion,addNewOption,deleteNewOption,newIsCheckOption,editQuiz,editQuizDeleteOption,editQuizAddOption,editQuizIsCheckedOption,editQuizAddQuetion,editQuizSaveQuetion,localQuiz,setInactive};
+export {showNavButton,singleCorrectMcq, singleCorrectOptions,isChecked,deleteOption,addQuiz,deleteQuiz,playQuiz,deleteQuetion,addQuetion,playQuizId,submitAnswer,submitQuiz,quizSubmitted,addNewQuetion,addNewOption,deleteNewOption,newIsCheckOption,editQuiz,editQuizDeleteOption,editQuizAddOption,editQuizIsCheckedOption,editQuizAddQuetion,editQuizSaveQuetion,localQuiz,setInactive,reset};
 
