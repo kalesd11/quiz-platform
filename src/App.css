@@ -67,3 +67,14 @@ body{
 .play:hover{
   color: green;
 }
+
+.create-quiz{
+  background: fixed;
+  background-image: url("https://images3.alphacoders.com/281/281285.jpg");
+  border: 1;
+  border-radius: 10;
+  
+}
+.home{
+  background-color: #282c34;
+}
