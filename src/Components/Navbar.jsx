@@ -8,7 +8,7 @@ function Navbar() {
   // const classes = useStyles()
   const dispatch = useDispatch();
   return (
-    <AppBar position="relative" color="inherit" elevation={3} style={{width:"100%"}}>
+    <AppBar position="relative" color='inherit' elevation={3} style={{width:"100%"}} >
       <Box
         mt={1}
         display="flex"
